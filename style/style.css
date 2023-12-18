@@ -1,0 +1,94 @@
+@font-face {
+    font-family: satoshi;
+    src: url("../public/OTF/Satoshi-Medium.otf");
+}
+
+body {
+    font-family: satoshi;
+    font-size: 11px;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    padding: 36px 0;
+    width: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 8px;
+    border-radius: 6px;
+    background: #ffffff;
+    transition: all 0.4s ease;
+    border: none;
+}
+
+.card:hover {
+    box-shadow: 19px 19px 59px #c7c7c7,
+        -19px -19px 59px #ffffff;
+}
+
+.card .title {
+    height: 52px;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    text-align: left;
+}
+
+.card image {
+    text-align: center;
+}
+.card button {
+    width: 100%;
+}
+.card .info {
+    padding: 0 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+.card .info .price {
+    font-size: 22px;
+}
+.card .info .count {
+    opacity: 0.6;
+} 
+.card:hover .info > .count {
+    opacity: 1;
+}
+.card .rate {
+    width: 100%;
+    padding:  0  12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+/* mobiles */
+@media screen and (max-width:468px) {
+    .container {
+        grid-template-columns: 100%;
+    }
+    .count {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width:468px) and (max-width:768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .card .info .count {
+        opacity: 1;
+    }
+}
